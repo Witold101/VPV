@@ -1,5 +1,4 @@
-package pl.pionwit.vpv;
-
+package pl.pionwit.vpv.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,15 +9,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.zip.Inflater;
 
-public class ContragentAdapter extends BaseAdapter {
+import pl.pionwit.vpv.ContragentItem;
+import pl.pionwit.vpv.R;
+
+
+public class AdapterClientGrid extends BaseAdapter {
 
     Context ctx;
     ArrayList<ContragentItem> contragentItems;
     LayoutInflater linflater;
 
-    ContragentAdapter(Context context, ArrayList<ContragentItem> contragentItems) {
+    public AdapterClientGrid(Context context, ArrayList<ContragentItem> contragentItems) {
         ctx = context;
         this.contragentItems = contragentItems;
         linflater = (LayoutInflater) ctx

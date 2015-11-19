@@ -12,20 +12,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import pl.pionwit.vpv.adapters.AdapterClientGrid;
+import pl.pionwit.vpv.adapters.ContragentAdapter;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private ListView contragentList;
     private GridView clientGrid;
-    private ArrayList<ContragentItem> contragentItems = new ArrayList<ContragentItem>();
+    private ArrayList<ContragentItem> contragentItems = new ArrayList<>();
     ContragentAdapter contragentAdapter;
 
 
@@ -54,36 +54,27 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
         contragentList=(ListView)findViewById(R.id.listViewContragent);
-
-        //contragentList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-        //    @Override
-        //    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        //        selection.setText(countries[position]);
-        //    }
-        //});
-        //selection=(TextView)findViewById(R.id.selection);
-
         fillData();
         contragentAdapter=new ContragentAdapter(this,contragentItems);
         contragentList.setAdapter(contragentAdapter);
-//*********************************************************************************************
-        //clientGrid=(GridView)findViewById(R.id.gvClients);
-        //String[] data = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"};
-        //ArrayAdapter<String> adapterGrid=new ArrayAdapter<String>(this,R.layout.grid_client_item,
-        //        data);
-        //clientGrid.setAdapter(adapterGrid);
-        //adjustGridView();
-//*********************************************************************************************
+
+        clientGrid=(GridView)findViewById(R.id.gvClients);
+        AdapterClientGrid adapterClientGrid=new AdapterClientGrid(this, contragentItems);
+        clientGrid.setAdapter(adapterClientGrid);
+        adjustGridView();
     }
 
     private void adjustGridView(){
-
+        clientGrid.setNumColumns(GridView.AUTO_FIT);
+        clientGrid.setColumnWidth(450);
+        clientGrid.setHorizontalSpacing(5);
+        clientGrid.setVerticalSpacing(5);
+        clientGrid.setStretchMode(GridView.STRETCH_SPACING_UNIFORM);
     }
 
     void fillData() {
-        for (int i = 1; i<=20; i++){
+        for (int i = 1; i<=30; i++){
             contragentItems.add(new ContragentItem("Contragent" + i,"Contact"+i, "Phone" + i,R.mipmap.ic_star_outline, true));
         }
     }
