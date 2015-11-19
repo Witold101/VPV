@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fullName">Полное наименование</string>
+    <string name="nameFactory">Краткое наименование</string>
+    <string name="phone">Телефон</string>
+    <string name="web">www.example.com</string>
+</resources>
