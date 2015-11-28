@@ -10,9 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.zip.Inflater;
 
-import pl.pionwit.vpv.ContragentItem;
+import pl.pionwit.vpv.BisnesLogic.Contragents.ContragentItem;
 import pl.pionwit.vpv.R;
 
 public class ContragentAdapter extends BaseAdapter {

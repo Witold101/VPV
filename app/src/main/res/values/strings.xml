@@ -10,4 +10,8 @@
     <string name="phone">Телефон</string>
     <string name="email">E-mail</string>
     <string name="web">www.example.com</string>
+    <string name="name_grid_contact">Имя:</string>
+    <string name="department_grid">Должность:</string>
+    <string name="phone_grid">Телефон:</string>
+    <string name="mail_grid">E-mail:</string>
 </resources>

@@ -17,6 +17,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import pl.pionwit.vpv.BisnesLogic.Contragents.ContragentItem;
 import pl.pionwit.vpv.adapters.AdapterClientGrid;
 import pl.pionwit.vpv.adapters.ContragentAdapter;
 
